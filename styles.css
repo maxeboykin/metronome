@@ -30,5 +30,43 @@ body {
   width: 100%;
   text-align:center;
   color: #fa545c;
+  font-weight: bold;
+}
 
+.bpm-display .tempo {
+  font-size: 4em;
+}
+
+.tempo-text {
+  font-size: .8em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.tempo-settings {
+display: flex;
+justify-content: space-between;
+}
+
+.tempo-settings .adjust-tempo-btn {
+  width: 30px;
+  height: 30px;
+  font-size: 40px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tempo-settings .adjust-tempo-btn:hover {
+  background: #fa545c;
+  color: #fff
+}
+
+.tempo-settings .decrease-tempo {
+  line-height: 25px;
+}
+
+.tempo-settings .increase-tempo {
+  line-height: 25px;
 }

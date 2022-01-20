@@ -24,5 +24,11 @@ body {
   width: 300px;
   height: 250px;
   justify-content: space-between;
+}
+
+.bpm-display {
+  width: 100%;
+  text-align:center;
+  color: #fa545c;
 
 }

@@ -36,3 +36,14 @@ body {
 .bpm-display .tempo {
   font-size: 4em;
 }
+
+.tempo-text {
+  font-size: .8em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.tempo-settings {
+display: flex;
+justify-content: space-between;
+}

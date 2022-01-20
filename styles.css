@@ -70,3 +70,34 @@ justify-content: space-between;
 .tempo-settings .increase-tempo {
   line-height: 25px;
 }
+
+.start-stop {
+  width: 50px;
+  height: 50px;
+  font-size: 0.7em;
+  text-align: center;
+  background: #fa545c;
+  border-radius: 50%;
+  color: #fff;
+  line-height: 50px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.start-stop:hover {
+  background: #ff656c;
+}
+
+.measures {
+  display: flex;
+  justify-content:center;
+}
+
+.measures .stepper {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  text-align: center;
+  margin: 0 5px;
+}

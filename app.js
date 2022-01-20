@@ -10,6 +10,7 @@ const measureCount = document.querySelector(".measure-count");
 
 let bpm = 140;
 let beatsPerMeasure = 4;
+let tempoTextString = tempoText.textContent;
 
 decreaseTempoBtn.addEventListener("click", () => {
   if(bpm <= 20) return;
@@ -21,12 +22,49 @@ decreaseTempoBtn.addEventListener("click", () => {
 increaseTempoBtn.addEventListener("click", () => {
   if(bpm >= 280) return;
   bpm++;
-  tempoDisplay.textContent = bpm;
-  tempoSlider.value = bpm;
+  updateMetronome();
 })
 
 tempoSlider.addEventListener('change', () => {
   bpm = tempoSlider.value;
+ updateMetronome();
+})
+
+tempoSlider.addEventListener('input', () => {
+  bpm = tempoSlider.value;
+ updateMetronome();
+})
+
+subtractBeats.addEventListener('click', () => {
+  if(beatsPerMeasure <= 2) return;
+  beatsPerMeasure--;
+  measureCount.textContent = beatsPerMeasure;
+})
+
+addBeats.addEventListener('click', () => {
+  if(beatsPerMeasure >= 12) return;
+  beatsPerMeasure++;
+  measureCount.textContent = beatsPerMeasure;
+})
+
+
+function updateMetronome(){
   tempoDisplay.textContent = bpm;
   tempoSlider.value = bpm;
-})
+  tempoText.textContent = tempoTextString;
+  if (bpm <= 40) tempoTextString = "Super Slow";
+  if (bpm > 40 && bpm < 80) tempoTextString = "Slow";
+  if (bpm > 80 && bpm < 120) tempoTextString = "Getting there";
+  if (bpm > 120 && bpm < 180) tempoTextString = "Nice and steady";
+  if (bpm > 180 && bpm < 220) tempoTextString = "Rock n' Roll";
+  if (bpm > 220 && bpm < 240) tempoTextString = "Funky Stuff";
+  if (bpm > 240 && bpm < 260) tempoTextString = "Relax Dude";
+  if (bpm > 260 && bpm < 280) tempoTextString = "Eddie Van Halen";
+
+  tempoText.content = tempoTextString;
+}
+
+function validateTempo() {
+  if(bpm<=20) return;
+  if(bpm>=280) return;
+}

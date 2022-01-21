@@ -29,7 +29,8 @@ function Timer(callback, timeInterval, options) {
     }
     callback();
     this.expected += this.timeInterval;
-    console.log(drift);
+    console.log('drift', drift);
+    console.log('next round time interval:', this.timeInterval - drift);
     this.timeout = setTimeout(this.round, this.timeInterval - drift);
   }
 }

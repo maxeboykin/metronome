@@ -1,4 +1,4 @@
-function Timer(callback, timeInterval) {
+function Timer(callback, timeInterval, errorCallback) {
   this.timeInterval = timeInterval;
 
   this.start = () => {
@@ -15,6 +15,12 @@ function Timer(callback, timeInterval) {
   //method that takes care of running our callback and adjusting the time interval
   this.round = () => {
     let drift = Date.now() - this.expected;
+    //check if drift is greater than timeInterval and run error callback
+    if(drift > this.timeInterval){
+      if(errorCallback){
+        errorCallback();
+      }
+    }
     callback();
     this.expected += this.timeInterval;
     console.log(drift);

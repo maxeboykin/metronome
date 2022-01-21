@@ -1,3 +1,5 @@
+import Timer from './timer';
+
 const tempoDisplay = document.querySelector(".tempo");
 const tempoText = document.querySelector(".tempo-text");
 const decreaseTempoBtn = document.querySelector(".decrease-tempo");
@@ -73,3 +75,9 @@ function validateTempo() {
   if(bpm<=20) return;
   if(bpm>=280) return;
 }
+
+function playClick() {
+  click1.play();
+}
+
+const metronome = new Timer(playClick, 60000 / bpm, {immediate: true});
